@@ -1,13 +1,15 @@
 body {
   margin: 0;
   font-family: 'Cascadia Code', monospace;
-  background-color: #eeeede;
+  background-color: #f4eeee;
   color: #1e1e1e;
+
+  /* min-width: 460px; */
 }
 
 .main {
   margin: 20px;
-  width: 450px;
+  width: 420px;
 }
 
 .dash {
@@ -40,10 +42,25 @@ small {
 
 select {
   appearance: none;
+  background-color: #f4eeee;
+  font-family: "Cascadia Code";
   border: none;
 }
 
 @font-face {
   font-family: "Cascadia Code";
   src: url(/fonts/CascadiaCode-VariableFont_wght.ttf);
+}
+
+@media (max-width: 500px) {
+  body {
+    margin: 0;
+    width: 100%;
+    font-size: smaller;
+  }
+
+  .main {
+    width: 100%;
+    margin: 10px;
+  }
 }
