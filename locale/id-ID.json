@@ -1,0 +1,17 @@
+{
+  "lang": "id-ID",
+  "langfull": "bahasa indonesia",
+
+  "intro": "hi aku nfoxers",
+  "contact": "kontak",
+  "summary": "penyimpulan",
+  "summarydsc": "orang tekno dari indonesia",
+  "metainfo": "info-meta",
+  "lu": "terakhir-diupdate:",
+  "ch": "hash-komit       :",
+  "cm": "pesan-komit      :",
+  "cl": "bahasa           : (pencet untuk mengubah)",
+  "note1": "CATATAN: situs ini menggunakan 5 byte di local storage maksimal untuk menyimpan data locale.",
+
+  "idx": 1
+}

@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: 'Cascadia Code', monospace;
+  background-color: #eeeede;
+  color: #1e1e1e;
+}
+
+.main {
+  margin: 20px;
+  width: 450px;
+}
+
+.dash {
+  border-top: 0.5px solid #2e2e2e;
+}
+
+.ok {
+  font-size: smaller;
+  margin: 5px 10px;
+}
+
+p {
+  margin: 8px 0;
+}
+
+pre {
+  margin: 0;
+}
+
+strong {
+  font-weight: bold;
+  color: #0e0e0e;
+
+}
+
+small {
+  color: #444;
+  font-size: 60%;
+}
+
+select {
+  appearance: none;
+  border: none;
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url(/fonts/CascadiaCode-VariableFont_wght.ttf);
+}
