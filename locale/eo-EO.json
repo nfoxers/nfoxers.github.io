@@ -1,0 +1,17 @@
+{
+  "lang": "en-US",
+  "langfull": "english (us)",
+
+  "intro": "hi i'm nfoxers",
+  "contact": "contact",
+  "summary": "summary",
+  "summarydsc": "indonesian tech guy",
+  "metainfo": "meta-info",
+  "lu": "last-updated:",
+  "ch": "commit-hash :",
+  "cm": "commit-msg  :",
+  "cl": "current-lang: (click to change)",
+  "note1": "NOTE: (THIS LANGUAGE IS UNFINISHED!) & this site uses maximally 5 bytes of local storage to save locale data.",
+
+  "idx": 2
+}

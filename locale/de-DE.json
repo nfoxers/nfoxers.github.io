@@ -1,0 +1,17 @@
+{
+  "lang": "de-DE",
+  "langfull": "deutsch (hochdeutsch)",
+
+  "intro": "hi ich bin nfoxers",
+  "contact": "kontakt",
+  "summary": "zusammenfassung",
+  "summarydsc": "indonesischer technikexperte",
+  "metainfo": "meta-info",
+  "lu": "zuletzt-aktualisiert:",
+  "ch": "commit-hash         :",
+  "cm": "commit-nachricht    :",
+  "cl": "aktuelle-sprache    : (zum ändern klicken)",
+  "note1": "hinweis: diese website verwendet maximal 5 byte lokalen speichers zum speichern von gebietsschemadaten.",
+
+  "idx": 1
+}
