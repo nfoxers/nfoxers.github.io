@@ -1,0 +1,51 @@
+{
+  "lang": "id",
+  "langfull": "bahasa indonesia",
+  "main": {
+    "intro": "hi aku nfoxers",
+    "posts": "post saya",
+    "photography": "fotografi",
+    "articles": "artikel-artikel gweh",
+    "contact": "kontak",
+    "nolink": "nggak ada linknya sekarang",
+    "summary": "penyimpulan",
+    "summarydsc": "orang tekno dari indonesia",
+    "metainfo": "info-meta",
+    "lu": "terakhir-diupdate:",
+    "ch": "hash-komit       :",
+    "cm": "pesan-komit      :",
+    "cl": "bahasa           : (pencet untuk mengubah)",
+    "note1": "CATATAN: situs ini menggunakan 9 byte di local storage kamu maksimal untuk menyimpan data locale.",
+    "ct": "tema             : (pencet untuk mengubah)",
+    "stuff": "barang-barang",
+    "dark": "gelap gurita",
+    "light": "terang"
+  },
+  "article": {
+    "back": "kembali",
+    "a1step4": "4. pages nya dideploy",
+    "a1step3": "3. komit komit dipush",
+    "a1step2": "2. tulis kode",
+    "a1step1": "1. bikin repo github",
+    "a1no": "ok artikelnya sampai gitu aja kamu sekarang bisa kembali ke homepage",
+    "a1done": "dan tiba-tiba nfoxers.github.io telah dinyatakan hidup",
+    "a1intro": "bagaimana caraku membuat webstite coolbeans ini? singkatnya,",
+    "art1": "cara buat website sepenuhnya gratis",
+    "intro": "aku nggak ada artikel yang bagus (setidaknya sekarang!!) :3"
+  },
+  "stuff": {
+    "back": "kembali",
+    "s1": "algoritma diffie-hellman manual",
+    "crypto": "kriptografi",
+    "change": "delta  :",
+    "dths1": "entropi shannon",
+    "dth": "teori data?",
+    "dths2": "dinamika penduduk",
+    "entintro": "entropi shannon",
+    "entropy": "entropi:"
+  },
+  "photo": {
+    "back": "kembali",
+    "nophoto": "nggak ada fotonya sekarang :3"
+  }
+}

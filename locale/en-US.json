@@ -1,17 +1,58 @@
 {
   "lang": "en-US",
   "langfull": "english (us)",
+  "main": {
+    "intro": "hi i'm nfoxers",
+    "posts": "posts",
+    "photography": "photography",
+    "articles": "articles",
+    "stuff": "stuff",
 
-  "intro": "hi i'm nfoxers",
-  "contact": "contact",
-  "summary": "summary",
-  "summarydsc": "indonesian tech guy",
-  "metainfo": "meta-info",
-  "lu": "last-updated:",
-  "ch": "commit-hash :",
-  "cm": "commit-msg  :",
-  "cl": "current-lang: (click to change)",
-  "note1": "NOTE: this site uses maximally 5 bytes of local storage to save locale data.",
+    "contact": "contact",
+    "nolink": "no link yet",
+    "summary": "summary",
+    "summarydsc": "indonesian tech guy",
+    "metainfo": "meta-info",
+    "lu": "last-updated :",
+    "ch": "commit-hash  :",
+    "cm": "commit-msg   :",
+    "cl": "current-lang : (click to change)",
+    "ct": "current-theme: (click to change)",
+    "light": "light",
+    "dark": "dark",
+    "note1": "NOTE: this site uses maximally 9 bytes of local storage to save locale data."
+  },
 
-  "idx": 0
+  "photo": {
+    "back": "back",
+    "nophoto": "i got no pictures (yet!!) :3"
+  },
+
+  "article": {
+    "intro": "i got no good articles (yet!!) :3",
+    "back": "back",
+
+    "art1": "how to create a website for free",
+    "a1intro": "how did i create this coolbeans webstite? literally",
+    "a1step1": "1. create github repo",
+    "a1step2": "2. write some code",
+    "a1step3": "3. push commits",
+    "a1step4": "4. deploy pages",
+    "a1done": "and nfoxers.github.io is created",
+    "a1no": "thank you for reading this short article you may now go back to the homepage"
+  },
+
+  "stuff": {
+    "back": "back",
+
+    "crypto": "cryptography",
+    "s1": "manual diffie-hellman",
+    "dth": "data theory?",
+    "dths1": "shannon's entropy",
+    "dths2": "population dynamics",
+
+    "entintro": "shannon's entropy",
+    "entropy": "entropy:",
+    "change": "change :"
+  }
 }

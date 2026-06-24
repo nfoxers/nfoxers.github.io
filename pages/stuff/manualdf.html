@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="manual diffie-hellman">
+  <meta name="author" content="narada foxy">
+
+  <link rel="stylesheet" href="/style/style.css">
+
+  <title>manual diffie-hellman</title>
+
+  <script type="module" src="/script/stuff/manualdf.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="tbar">
+      <p>manual diffie-hellman</p>
+      <pre class="link2"><a href="/pages/stuff.html">back</a></pre>
+    </div>
+    
+    <div class="dash"></div>
+    <div class="sep"></div>
+    <p>(work in progress)</p>
+    <small id="err" style="display: none;">err: connection not secure, cryptographical libraries are disabled</small>
+    <p>diffie hellman part</p>
+    <pre class="pre">your public key:</pre>
+    <p class="pre ok" id="pk"></p>
+    <textarea placeholder="insert your partner's key" id="ik"></textarea>
+    <button id="cf">confirm</button>
+    <div class="dash sep"></div>
+    <p>crypto part</p>
+    <textarea placeholder="your message" id="ym"></textarea>
+    <textarea placeholder="their message" id="tm"></textarea>
+    <p id="out">ok</p>
+    <button id="cf2">encrypt/decrypt</button>
+    <small id="warn">warn: keys not confirmed</small>
+  </div>
+
+  
+</body>
+</html>

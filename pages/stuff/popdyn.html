@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="population dynamics">
+  <meta name="author" content="narada foxy">
+
+  <link rel="stylesheet" href="/style/style.css">
+
+  <title>population dynamics</title>
+
+  <script type="module" src="/script/stuff/popdyn.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="tbar">
+      <p>popdyn</p>
+      <pre class="link2"><a href="/pages/stuff.html" data-i18n="back">back</a></pre>
+    </div>
+    
+    <div class="dash"></div>
+    <div class="sep"></div>
+    <p>(work in progress)</p>
+    <p>the output</p>
+    <div class="rmarg">
+      <pre>population: <span id="cpop">1</span></pre>
+      <pre>state fund: <span id="sfund">0</span></pre>
+      <pre>state inc : <span id="sinc">0</span></pre>
+      <pre>state tax : <span id="stax">0</span></pre>
+      <pre>produce   : <span id="cpro">2500</span></pre>
+    </div>
+    <div class="sep"></div>
+    <button id="step">step</button>
+    <button id="reset">reset</button>
+    <div class="dash sep"></div>
+    <p>the control</p>
+    <pre>tax rate (<span id="taxr">0.2</span>)</pre>
+    <input type="range" id="taxs" max="1" min="0" step="0.01">
+    <pre>income mult (<span id="incm">0.2</span>)</pre>
+    <input type="range" id="incs" max="1" min="0" step="0.01">
+  </div>
+</body>
+</html>

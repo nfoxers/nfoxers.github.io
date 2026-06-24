@@ -9,23 +9,34 @@
   <link rel="stylesheet" href="style/style.css">
 
   <title>dreißig</title>
+
+  <script type="module" src="script/main.js"></script>
 </head>
 <body>
   <!-- i am truly sorry that my source code is just that bad -->
 
   <div class="main">
-    <p data-i18n="intro">hi im nfoxers</p>
+    <p data-i18n="intro">hi i'm nfoxers</p>
     
     <div class="dash"></div>
-    
+    <p data-i18n="posts">posts</p>
+    <div class="rmarg">
+      <pre class="link2"><a href="/pages/photography.html">/pages/photography.html</a> - <span data-i18n="photography">photography</span></pre>
+      <pre class="link2"><a href="/pages/articles.html">/pages/articles.html</a> - <span data-i18n="articles">articles</span></pre>
+      <pre class="link2"><a href="/pages/stuff.html">/pages/stuff.html</a> - <span data-i18n="stuff">stuff</span></pre>
+    </div>
+
+    <div style="margin-top: 10px;"></div>
+    <div class="dash"></div>
+
     <p data-i18n="contact">contact</p>
 
     <pre>[github  ] <a href="https://github.com/nfoxers">nfoxers</a></pre>
     <pre>[git.gay ] <a href="https://git.gay/nfoxers">nfoxers</a></pre>
     <pre>[codeberg] <a href="https://codeberg.org/nfoxers">nfoxers</a></pre>
     <div style="margin-top: 10px;"></div>
-    <pre>[discord ] <a href="">sezyn1</a> (no link yet)</pre>
-    <pre>[matrix  ] <a href="">@vulpesvulpesvulpes:matrix.org</a> (no link yet)</pre>
+    <pre>[discord ] <a href="">sezyn1</a> (<span data-i18n="nolink">no link yet</span>)</pre>
+    <pre>[matrix  ] <a href="">@vulpesvulpesvulpes:matrix.org</a> (<span data-i18n="nolink">no link yet</span>)</pre>
     <pre>[barq    ] <a href="https://barq.app/@nfoxers89">nfoxers89</a></pre>
 
     <div style="margin-top: 10px;"></div>
@@ -40,21 +51,22 @@
     <pre data-i18n="lu">last-updated:</pre><p id="lu" class="ok">1970-01-01T00:00:00Z</p>
     <pre data-i18n="ch">commit-hash :</pre><p id="ch" class="ok">2d76805d674c2acf445a4ee4d84d76ed66751cb585ab3</p>
     <pre data-i18n="cm">commit-msg  :</pre><p id="cm" class="ok">"no connection to git perhaps?"</p>
+    <div class="sep"></div>
+    <div class="sep"></div>
     <pre data-i18n="cl">current language:</pre>
     <select id="cl" class="ok">
       <option value="en-US">english (us)</option>
-      <option value="de-DE">deutsch (hochdeutsch)</option>
-      <option value="eo-EO">esperanto</option>
-      <option value="id-ID">bahasa indonesia</option>
-      <option value="la-Cla">LINGVALATINA</option>
-      <option value="la-Ecc">lingua latina</option>
+      <option value="id">bahasa indonesia</option>
+    </select>
+    <pre data-i18n="ct">current-theme: (click to change)</pre>
+    <select id="ct" class="ok">
+      <option value="light" data-i18n="light">light</option>
+      <option value="dark" data-i18n="dark">dark</option>
     </select>
     <div style="margin-top: 10px;"></div>
 
-    <small data-i18n="note1">NOTE: this site uses 5 bytes of local storage to store locale data.</small>
+    <small data-i18n="note1">NOTE: this site uses 9 bytes of local storage to store locale data.</small>
 
   </div>
-
-  <script src="script/main.js"></script>
 </body>
 </html>

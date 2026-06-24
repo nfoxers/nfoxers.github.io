@@ -1,24 +1,7 @@
-async function llang(code) {
-  try {
-    const res = await fetch(`./locale/${code}.json`);
-    const trans = await res.json();
+import { llang, chtheme, deflang, deftheme } from "./locstub.js"
 
-    document.querySelectorAll('[data-i18n]').forEach(e => {
-      const key = e.getAttribute('data-i18n');
-      if(trans[key]) {
-        e.textContent = trans[key];
-      }
-    });
-
-    document.documentElement.lang = code;
-    localStorage.setItem('preferredlang', code);
-
-    document.getElementById('cl').selectedIndex = trans['idx'];
-
-  } catch(e) {
-    console.error("load lang error: ", e);
-  }
-}
+deftheme();
+await deflang("main");
 
 async function getcommit() {
   try {
@@ -43,15 +26,18 @@ const cl = document.getElementById('cl');
 cl.addEventListener('change', () => {
   const idx = cl.selectedIndex;
   const val = cl.options[idx].value;
-  llang(val);
+  llang(val, "main");
 })
 
-const lang = localStorage.getItem('preferredlang');
+const ct = document.getElementById('ct');
+ct.addEventListener('change', () => {
+  const idx = ct.selectedIndex;
+  const val = ct.options[idx].value;
+  chtheme(val);
+})
 
-if(lang) {
-  llang(lang);
-} else {
-  llang("en-US");
-}
 
-getcommit();
+await getcommit();
+
+
+
