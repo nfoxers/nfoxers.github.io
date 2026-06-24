@@ -20,6 +20,7 @@
     "ct": "current-theme: (click to change)",
     "light": "light",
     "dark": "dark",
+    "ivrs": "inverse",
     "note1": "NOTE: this site uses maximally 9 bytes of local storage to save locale data."
   },
 

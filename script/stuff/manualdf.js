@@ -1,4 +1,4 @@
-import { deftheme } from "/script/locstub.js";
+import { deflang, deftheme } from "/script/locstub.js";
 
 function b64(s) {
   return btoa(String.fromCharCode(...new Uint8Array(s)))
@@ -30,6 +30,7 @@ if(!window.isSecureContext) {
   document.getElementById('err').style = "display: block;";
 }
 
+await deflang("stuff");
 deftheme();
 
 async function aes_enc(key, m) {

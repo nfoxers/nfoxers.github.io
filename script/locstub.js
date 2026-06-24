@@ -18,6 +18,8 @@ export async function llang(code, sect) {
       cl.value = code;
     }
 
+    document.documentElement.classList.remove('i18n-load');
+
   } catch(e) {
     console.error("load lang error: ", e);
   }
