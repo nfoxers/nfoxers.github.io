@@ -19,7 +19,7 @@
 
   --fg: #f4eeee;
   --bg: #151e1e;
-  --bg-soft: #202020;
+  --bg-soft: #303030;
   --fg-dash: #9e9e9e;
   --fg-pre: #deded0;
   --a: #ae5050;
@@ -54,8 +54,6 @@ body {
   margin: 0;
   background-color: var(--bg);
   color: var(--fg);
-
-  /* min-width: 460px; */
 
   transition: all 100ms ease-in-out;
 }
@@ -97,8 +95,26 @@ body {
   color: var(--fg-pre);
 }
 
+.pre2 {
+  line-height: 1em;
+  margin: 0.2ch 0;
+}
+
 .rmarg {
   margin-left: 10px;
+}
+
+.rmarg p {
+  padding-left: 20px;
+  text-indent: -20px;
+  line-height: 3ch;
+}
+
+.log {
+  background-color: var(--bg-soft);
+  min-height: 100px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .link2 {
@@ -132,6 +148,7 @@ a:hover {
 
 p {
   margin: 8px 0;
+  overflow-wrap: break-word;
 }
 
 pre {
@@ -177,6 +194,10 @@ textarea {
   font-size: small;
   padding: 2.5px;
   border-radius: 5px;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 67px;
 }
 
 @font-face {

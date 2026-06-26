@@ -54,6 +54,25 @@
 
     "entintro": "shannon's entropy",
     "entropy": "entropy:",
-    "change": "change :"
+    "change": "change :",
+
+    "err": "err: connection not secure, cryptographical libraries are disabled",
+    "dfpart": "diffie hellman part",
+    "publickey": "your pubic key:",
+    "clk": "click to copy",
+    "cpy": "copied",
+    "you": "you",
+    "they": "they",
+    "yourkey": "your key",
+    "theirkey": "their key",
+    "yourmsg": "your message",
+    "theirmsg": "their message",
+    "cf": "confirm",
+    "reg": "regenerate",
+    "crpart": "crypto part",
+    "send": "send",
+    "recv": "recieve",
+    "warn": "warn: keys not confirmed",
+    "log": "message log"
   }
 }

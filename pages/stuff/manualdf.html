@@ -17,25 +17,34 @@
   <div class="main">
     <div class="tbar">
       <p>manual diffie-hellman</p>
-      <pre class="link2"><a href="/pages/stuff.html">back</a></pre>
+      <pre class="link2"><a href="/pages/stuff.html" data-i18n="back">back</a></pre>
     </div>
     
     <div class="dash"></div>
     <div class="sep"></div>
-    <p>(work in progress)</p>
-    <small id="err" style="display: none;">err: connection not secure, cryptographical libraries are disabled</small>
-    <p>diffie hellman part</p>
-    <pre class="pre">your public key:</pre>
-    <p class="pre ok" id="pk"></p>
-    <textarea placeholder="insert your partner's key" id="ik"></textarea>
-    <button id="cf">confirm</button>
+    <small id="err" data-i18n="err" style="display: none;">err: connection not secure, cryptographical libraries are disabled</small>
+    <p data-i18n="dfpart">diffie hellman part</p>
+
+    <pre><span data-i18n="publickey">your public key:</span> (<span id="clk" data-i18n="clk">click to copy</span>)</pre>
+    <textarea class="sep" placeholder="your key" data-i18n-pl="yourkey" id="yk" style="cursor: pointer;" readonly></textarea>
+    <textarea placeholder="their key" data-i18n-pl="theirkey" id="tk"></textarea>
+    <button id="cf" class="sep" data-i18n="cf">confirm</button>
+    <button id="reg" data-i18n="reg">regenerate</button>
     <div class="dash sep"></div>
-    <p>crypto part</p>
-    <textarea placeholder="your message" id="ym"></textarea>
-    <textarea placeholder="their message" id="tm"></textarea>
-    <p id="out">ok</p>
-    <button id="cf2">encrypt/decrypt</button>
-    <small id="warn">warn: keys not confirmed</small>
+    <p data-i18n="crpart">crypto part</p>
+    <textarea placeholder="your message" data-i18n-pl="yourmsg" id="ym"></textarea>
+    <textarea placeholder="their message" data-i18n-pl="theirmsg" id="tm"></textarea>
+    <p id="out"></p>
+    <button id="send" data-i18n="send">send</button>
+    <button id="recv" data-i18n="recv">recieve</button>
+    <br>
+    <small class="sep" id="warn" data-i18n="warn">warn: keys not confirmed</small>
+
+    <div class="sep"></div>
+    
+    <div id="log" class="log">
+      <pre data-i18n="log">message log</pre>
+    </div>
   </div>
 
   

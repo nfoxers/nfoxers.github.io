@@ -1,3 +1,5 @@
+export let g_trans;
+
 export async function llang(code, sect) {
   try {
     const res = await fetch(`/locale/${code}.json`);
@@ -10,8 +12,16 @@ export async function llang(code, sect) {
       }
     });
 
+    document.querySelectorAll('[data-i18n-pl]').forEach(e => {
+      const key = e.getAttribute('data-i18n-pl');
+      if(trans[sect][key]) {
+        e.placeholder = trans[sect][key];
+      }
+    });
+
     document.documentElement.lang = code;
     localStorage.setItem('preferredlang', code);
+    g_trans = trans;
 
     const cl = document.getElementById('cl');
     if(cl) {

@@ -8,3 +8,7 @@ if(th) {
 }
 
 document.documentElement.classList.add('i18n-load');
+
+setTimeout(() => {
+  document.documentElement.classList.remove('i18n-load');
+}, 1000);

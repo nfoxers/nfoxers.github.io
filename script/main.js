@@ -23,10 +23,14 @@ async function getcommit() {
 }
 
 const cl = document.getElementById('cl');
-cl.addEventListener('change', () => {
+cl.addEventListener('change', async () => {
   const idx = cl.selectedIndex;
   const val = cl.options[idx].value;
-  llang(val, "main");
+  document.documentElement.classList.add('i18n-load');
+  setTimeout(() => {
+    document.documentElement.classList.remove('i18n-load')
+  }, 1000);
+  await llang(val, "main");
 })
 
 const ct = document.getElementById('ct');
