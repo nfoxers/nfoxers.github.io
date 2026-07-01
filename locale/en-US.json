@@ -48,6 +48,12 @@
 
     "crypto": "cryptography",
     "s1": "manual diffie-hellman",
+    "s2": "base64",
+    "elect": "electronics",
+    "elcs1": "baud rate calculator",
+    "phy": "physics",
+    "phys1": "everything about light",
+    "phys2": "timezone corrector",
     "dth": "data theory?",
     "dths1": "shannon's entropy",
     "dths2": "population dynamics",
@@ -58,7 +64,7 @@
 
     "err": "err: connection not secure, cryptographical libraries are disabled",
     "dfpart": "diffie hellman part",
-    "publickey": "your pubic key:",
+    "publickey": "your public key:",
     "clk": "click to copy",
     "cpy": "copied",
     "you": "you",
@@ -73,6 +79,15 @@
     "send": "send",
     "recv": "recieve",
     "warn": "warn: keys not confirmed",
-    "log": "message log"
+    "log": "message log",
+
+    "encwin": "encoding window",
+    "decwin": "decoding window",
+    "conwin": "controls window",
+    "b64url": "use base64-url",
+    "enc2cp": "enable click 2 copy",
+    "clear": "clear",
+    "yrb64": "your base64 here",
+    "dechr": "decoded message here"
   }
 }

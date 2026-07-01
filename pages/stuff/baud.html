@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="narada foxy">
+
+  <link rel="stylesheet" href="/style/style.css">
+
+  <title>baud calculator</title>
+
+  <script src="/script/thstub.js"></script>
+  <script type="module">
+    import { deflang, deftheme } from "/script/locstub.js"
+    deflang("stuff");
+    deftheme();
+
+    const br = document.getElementById('br');
+    const db = document.getElementById('db');
+    const pb = document.getElementById('pb');
+    const sb = document.getElementById('sb');
+    const bu = document.getElementById('baudunit');
+    const du = document.getElementById('byteunit');
+    const bt = document.getElementById('bt');
+
+    [br, db, pb, sb, bu, bt, du].forEach(e => {
+      e.addEventListener('input', upd)
+    });
+
+    function toval(k) {
+      switch(k) {
+        case 'u':
+          return 1;
+        case 'k':
+          return 1e3;
+        case 'M':
+          return 1e6;
+        case 'G':
+          return 1e9;
+        case 'T':
+          return 1e12;
+        case 'P':
+          return 1e15;
+        default:
+          throw new Error("invalid suffix");
+      }
+    }
+
+    function upd() {
+      const t = parseInt(db.value) + parseInt(pb.value) + parseInt(sb.value) + 1
+      const brv = parseInt(br.value) * toval(bu.value);
+      const tf = t / brv;
+      const bps = brv * (parseInt(db.value) / t);
+
+      const by = parseInt(bt.value) * toval(du.value);
+      const tm = (8 * by/bps);
+
+      const c = 299792458;
+
+      document.getElementById('fb').textContent = `${t} (${(tf * 1e3).toFixed(4)} ms, ${(tf * 1e6).toFixed(4)} us)`;
+      document.getElementById('dt').textContent = `${(bps).toFixed(1)} bps, ${(bps * 1e-6).toFixed(2)} Mbps`;
+      document.getElementById('bp').textContent = `${(bps/8).toFixed(1)} Bps, ${(bps/8 * 1e-6).toFixed(2)} MBps`;
+      document.getElementById('ts1').textContent = `${parseInt(bt.value)} ${du.value != 'u' ? du.value : ''}B`;
+      
+      if(tm > 1) {
+        document.getElementById('ts2').style = 'display: inline';
+        document.getElementById('ts3').style = 'display: none';
+      } else {
+        document.getElementById('ts2').style = 'display: none';
+        document.getElementById('ts3').style = 'display: inline';
+      }
+
+      document.getElementById('ts2').textContent = `${(tm % 60).toFixed(4)} s, ${tm/60 % 60 | 0} m, ${tm/3600 % 24 | 0} h, ${tm/(3600*24) | 0} d, ${tm/(3600*24*30) | 0} m`;
+      document.getElementById('ts3').textContent = `${(tm * 1e3).toFixed(2)} ms, ${(tm * 1e6).toFixed(2)} us, ${(tm * 1e9).toFixed(2)} ns, ${(tm * c).toFixed(2)} ls (m)`
+    }
+
+    upd();
+  </script>
+</head>
+<body>
+  <div class="main">
+    <div class="tbar">
+      <p>baud</p>
+      <pre class="link2"><a href="/pages/stuff.html" data-i18n="back">back</a></pre>
+    </div>
+    <div class="dash"></div>
+    <div class="sep"></div>
+
+    <pre>frame bits: <span id="fb">0</span></pre>
+    <pre>data throughput: <span id="dt">0</span></pre>
+    <pre>byte perf: <span id="bp">0</span></pre>
+    <pre>to send <span id="ts1">0 B</span>: <span id="ts2">0</span> <span id="ts3">0</span></pre>
+ 
+    <div class="sep"></div>
+    <div class="sep"></div>
+
+    <pre>baud rate:</pre>
+    <input type="number" class="rmarg" id="br" min="0" value="9600">
+    <select id="baudunit">
+      <option value="u">b</option>
+      <option value="k">kb</option>
+      <option value="M">Mb</option>
+    </select>
+    <pre>data bits:</pre>
+    <input type="number" class="rmarg" id="db" min="0" value="8">
+    <pre>parity bits:</pre>
+    <input type="number" class="rmarg" id="pb" min="0" value="0">
+    <pre>stop bits:</pre>
+    <input type="number" class="rmarg" id="sb" min="1" value="1">
+    <pre>bytes to send:</pre>
+    <input type="number" class="rmarg" id="bt" min="0" value="1">
+    <select id="byteunit">
+      <option value="u">B</option>
+      <option value="k">kB</option>
+      <option value="M">MB</option>
+      <option value="G">GB</option>
+      <option value="T">TB</option>
+      <option value="P">PB</option>
+    </select>
+
+  </div>
+</body>
+</html>

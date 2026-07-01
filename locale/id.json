@@ -61,7 +61,21 @@
     "yourmsg": "pesanmu",
     "cpy": "terkopi",
     "they": "mereka",
-    "you": "kamu"
+    "you": "kamu",
+    "elcs1": "kalkulator rata baud",
+    "elect": "elektronika",
+    "phys1": "semuanya tentang cahaya",
+    "phy": "fisika",
+    "phys2": "korektor zona waktu",
+    "s2": "base64",
+    "b64url": "pakai base64-url",
+    "conwin": "bagian kontrol",
+    "clear": "hapus semua",
+    "decwin": "bagian dekode",
+    "dechr": "pesan terdekode disini",
+    "encwin": "bagian enkode",
+    "yrb64": "base64-mu disini",
+    "enc2cp": "pakai klik untuk ngopi"
   },
   "photo": {
     "back": "kembali",

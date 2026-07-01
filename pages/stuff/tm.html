@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="narada foxy">
+
+  <link rel="stylesheet" href="/style/style.css">
+
+  <title>timezone corrector</title>
+
+  <script src="/script/thstub.js"></script>
+  <script type="module">
+    import { deflang, deftheme } from "/script/locstub.js"
+    deflang("stuff");
+    deftheme();
+
+    const ok = document.getElementById('ok');
+    let lon = 0;
+
+    ok.addEventListener('input', () => {
+      lon = parseFloat(ok.value);
+      upd_s();
+    });
+
+    function upd_s() {
+      const n = new Date();
+      const utc = n.getTime();
+      const off = lon * (4*60*1000);
+
+      const loc = new Date(utc - n.getTimezoneOffset() * (60*1000));
+      const corr = new Date(utc + off);
+
+      const diff2 = off + n.getTimezoneOffset() * (60*1000);
+
+      document.getElementById('utc').textContent = n.toISOString();
+      document.getElementById('local').textContent = loc.toISOString().slice(0, -1);
+      document.getElementById('correct').textContent = corr.toISOString().slice(0, -1);
+
+      const d = Math.abs(diff2);
+
+      document.getElementById('diff').textContent = `${diff2 < 0 ? '- ' : ''}${d / (1000*60*60) | 0} h, ${d / (1000*60) % 60 | 0} m, ${d / (1000) % 60 | 0} s, ${d % 1000 | 0} ms`;
+
+    }
+
+    function upd() {
+      upd_s();
+      requestAnimationFrame(upd);
+    }
+
+    lon = parseFloat(ok.value);
+    requestAnimationFrame(upd);
+  </script>
+</head>
+<body>
+  <div class="main">
+    <div class="tbar">
+      <p>timezone corrector</p>
+      <pre class="link2"><a href="/pages/stuff.html" data-i18n="back">back</a></pre>
+    </div>
+    
+    <div class="dash"></div>
+    <div class="sep"></div>
+
+    <pre>UTC: <span id="utc"></span></pre>
+    <pre>local: <span id="local"></span></pre>
+    <pre>correct: <span id="correct"></span></pre>
+    <pre>diff: <span id="diff"></span></pre>
+
+    <div class="sep"></div>
+
+    <pre>enter your longitude</pre>
+    <input type="number" id="ok" min="-180.000" value="0">
+
+  </div>
+</body>
+</html>

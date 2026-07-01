@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="hd44780">
+  <meta name="author" content="narada foxy">
+
+  <link rel="stylesheet" href="/style/style.css">
+
+  <style>
+    .disp {
+      box-sizing: border-box;
+      height: 200px;
+      width: 100%;
+      background-color: var(--bg-soft);
+    }
+
+    input {
+      appearance: auto;
+    }
+  </style>
+
+  <title>hd44780</title>
+
+  <script src="/script/thstub.js"></script>
+  <script type="module">
+    import { deflang, deftheme } from "/script/locstub.js"
+    deflang("stuff");
+    deftheme();
+  </script>
+</head>
+<body>
+  <div class="main">
+    <div class="tbar">
+      <p>hd44780</p>
+      <pre class="link2"><a href="/index.html" data-i18n="back">back</a></pre>
+    </div>
+
+    <div class="dash"></div>
+    <div class="sep"></div>
+
+    <div class="disp">
+    </div>
+
+    <p>rs
+    <input type="checkbox" name="rs" id="rs"></p>
+
+    <p>rw
+    <input type="checkbox" name="rw" id="rw"></p>
+
+    <p>e
+    <input type="checkbox" name="e" id="e"></p>
+
+    <input type="checkbox" name="d7" id="d7" class="d">
+    <input type="checkbox" name="d6" id="d6" class="d">
+    <input type="checkbox" name="d5" id="d5" class="d">
+    <input type="checkbox" name="d4" id="d4" class="d">
+
+    <input type="checkbox" name="d3" id="d3" class="d">
+    <input type="checkbox" name="d2" id="d2" class="d">
+    <input type="checkbox" name="d1" id="d1" class="d">
+    <input type="checkbox" name="d0" id="d0" class="d">
+
+    <p>inst: <span id="inst">ok</span></p>
+  </div>
+
+  <script src="/script/stuff/hd44780.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="narada foxy">
+
+  <link rel="stylesheet" href="/style/style.css">
+
+  <title>lught calculator</title>
+
+  <script src="/script/thstub.js"></script>
+  <script type="module">
+    import { deflang, deftheme } from "/script/locstub.js"
+    deflang("stuff");
+    deftheme();
+
+    function tounit(x, u = ['n', 'u', 'm', '-', 'k', 'M', 'G']) {
+      let idxr = Math.floor(Math.floor(Math.log10(x)) / 3);
+
+      let idx = idxr + (u.length - 1)/2;
+      idx = Math.max(0, Math.min(idx, u.length - 1));
+
+      let v = x * (10 ** -((idx - (u.length - 1)/2) * 3));
+      return {v: v, u: u[idx]};
+    }
+
+    function toval(k) {
+      switch(k) {
+        case 'n':
+          return 1e-9;
+        case 'u':
+          return 1e-6;
+        case 'm':
+          return 1e-3;
+        case '-':
+          return 1;
+        case 'k':
+          return 1e3;
+        case 'M':
+          return 1e6;
+        case 'G':
+          return 1e9;
+        default:
+          throw new Error("invalid suffix");
+      }
+    }
+
+    let c = 299792458;
+
+    const sl = document.getElementById('sl');
+    const freq = document.getElementById('freq');
+    const funit = document.getElementById('funit');
+    const wave = document.getElementById('wav');
+    const wunit = document.getElementById('wunit');
+    const ml = document.getElementById('ml');
+    const lt = document.getElementById('lt');
+
+    sl.addEventListener('input', () => {
+      c = parseInt(sl.value);
+      upd_f();
+    });
+
+    [freq, funit].forEach(e => {
+      e.addEventListener('input', upd_f);
+    });
+
+    [wave, wunit].forEach(e => {
+      e.addEventListener('input', upd_w);
+    });
+
+    function upd_f() {
+      const f = parseFloat(freq.value) * toval(funit.value);
+      const a = tounit(c / f, ['m', '-', 'k']);
+      wave.value = a.v.toFixed(3);
+      wunit.value = a.u;
+      ml.textContent = `${(parseFloat(wave.value)/4).toFixed(2)} ${a.u == '-' ? '' : a.u}m`;
+    }
+
+    function upd_w() {
+      const w = parseFloat(wave.value) * toval(wunit.value);
+      const a = tounit(c / w);
+      freq.value = a.v.toFixed(3);
+      funit.value = a.u;
+      ml.textContent = `${(parseFloat(wave.value)/4).toFixed(2)} ${wunit.value == '-' ? '' : wunit.value}m`;
+    }
+  </script>
+</head>
+<body>
+  <div class="main">
+    <div class="tbar">
+      <p>light</p>
+      <pre class="link2"><a href="/pages/stuff.html" data-i18n="back">back</a></pre>
+    </div>
+    
+    <div class="dash"></div>
+    <div class="sep"></div>
+    <p>(work in progress)</p>
+    <p>general configs</p>
+    <pre>speed of light:</pre>
+    <select id="sl" class="rmarg">
+      <option value="299792458">in vacuum</option>
+      <option value="299702547">in air</option>
+      <option value="244900568">in watah</option>
+      <option value="114424602">in moissanite</option>
+    </select>
+
+    <div class="dash sep"></div>
+    <p>radio stuff</p>
+    <pre>l/4 monopole length: <span id="ml">1</span></pre>
+
+    <pre>frequency:</pre>
+    <input type="number" class="rmarg" id="freq" min="0" value="1">
+    <select id="funit" >
+      <option value="n">nHz</option>
+      <option value="u">uHz</option>
+      <option value="m">mHz</option>
+      <option value="-"">Hz</option>
+      <option value="k">kHz</option>
+      <option value="M">MHz</option>
+      <option value="G">GHz</option>
+    </select>
+    <pre>wavelength:</pre>
+    <input type="number" class="rmarg" id="wav" min="0" value="1">
+    <select id="wunit">
+      <option value="m">mm</option>
+      <option value="-">m</option>
+      <option value="k">km</option>
+    </select>
+  </div>
+</body>
+</html>

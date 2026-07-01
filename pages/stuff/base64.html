@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="base64">
+  <meta name="author" content="narada foxy">
+
+  <link rel="stylesheet" href="/style/style.css">
+
+  <style>
+    input {
+      appearance: auto;
+    }
+  </style>
+
+  <title>base64 thing</title>
+
+  <script src="/script/thstub.js"></script>
+  <script type="module">
+    import { deflang, deftheme, g_trans } from "/script/locstub.js"
+    deflang("stuff");
+    deftheme();
+
+    const inp = document.getElementById('inp');
+    const out = document.getElementById('out');
+    const inpd = document.getElementById('inpd');
+    const outd = document.getElementById('outd');
+    const u = document.getElementById('u');
+    const c2c = document.getElementById('c2c');
+
+    function d(ms) {
+      return new Promise(e => setTimeout(e, ms));
+    }
+
+    function b64(s) {
+      return btoa(s)
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=+$/, '');
+    }
+
+    function atobu(b) {
+      let base = b
+        .replace(/-/g, '+')
+        .replace(/_/g, '/');
+
+      const pad = base.length % 4;
+      if(pad) {
+        base += '='.repeat(4 - pad);
+      }
+
+      return atob(base);
+    }
+
+    async function cout() {
+      await navigator.clipboard.writeText(out.value);
+      let o = out.value;
+      out.value = g_trans.stuff.cpy;
+      await d(1000);
+      out.value = o;
+    }
+
+    async function coutd() {
+      await navigator.clipboard.writeText(outd.value);
+      let o = outd.value;
+      outd.value = g_trans.stuff.cpy;
+      await d(1000);
+      outd.value = o;
+    }
+
+    document.getElementById('clr').addEventListener('click', () => {
+      inp.value = '';
+      inpd.value = '';
+      out.value = '';
+      outd.value = '';
+    });
+
+    u.addEventListener('input', () => {
+      out.value = u.checked ? b64(inp.value) : btoa(inp.value);
+      outd.value = u.checked ? atobu(inpd.value) : atob(inpd.value);
+    });
+
+    c2c.addEventListener('input', () => {
+      if(c2c.checked === true) {
+        out.style = "cursor: pointer;";
+        outd.style = "cursor: pointer;";
+
+        out.addEventListener('click', cout);
+        outd.addEventListener('click', coutd);
+      } else {
+        out.removeEventListener('click', cout);
+        outd.removeEventListener('click', coutd);
+
+        out.style = '';
+        outd.style = '';
+      }
+    })
+
+    inp.addEventListener('input', () => {
+      out.value = u.checked ? b64(inp.value) : btoa(inp.value);
+    });
+
+    inpd.addEventListener('input', () => {
+      outd.value = u.checked ? atobu(inpd.value) : atob(inpd.value);
+    });
+  </script>
+</head>
+<body>
+  <div class="main">
+    <div class="tbar">
+      <p>base64</p>
+      <pre class="link2"><a href="/pages/stuff.html" data-i18n="back">back</a></pre>
+    </div>
+    
+    <div class="dash"></div>
+    <div class="sep"></div>
+    <p data-i18n="encwin">encoding window</p>
+    <textarea placeholder="your text" id="inp" data-i18n-pl="yourmsg"></textarea>
+    <textarea placeholder="b64" id="out" readonly></textarea>
+    <div class="dash sep"></div>
+    <p data-i18n="decwin">decoding window</p>
+    <textarea placeholder="your base64" id="inpd" data-i18n-pl="yrb64"></textarea>
+    <textarea placeholder="decoded here" id="outd" data-i18n-pl="dechr" readonly></textarea>
+    <div class="dash sep"></div>
+    <p data-i18n="conwin">controls window</p>
+    <pre><span data-i18n="b64url">use base64-url</span> <input type="checkbox" id="u"></pre>
+    <pre><span data-i18n="enc2cp">enable click 2 copy</span> <input type="checkbox" id="c2c"></pre>
+    <button id="clr" class="sep" data-i18n="clear">clear</button>
+  </div>
+</body>
+</html>
